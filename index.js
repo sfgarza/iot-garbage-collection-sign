@@ -1,10 +1,21 @@
 #!/usr/bin/env node
+/**
+ * This node script will make an API call that checks my local garbage collection schedule. 
+ * If Trash or Recycling is being collected the next day their corresponding light will blink
+ * until the button is pressed to reset it
+ * Usage:
+ * POSTURL=https://yourcloudfunctionurl.net/trash-schedule node index.js --streetnum=123 --streetname=Main --streetsuffix=St --apikey=XXXXXXXXX
+ * 
+ * Suggested Crontab:`
+ * 00 17 * * * /usr/local/bin/node POSTURL=https://yourcloudfunctionurl.net/trash-schedule /home/pi/iot-garbage-schedule/index.js  --streetnum=123 --streetname=Main --streetsuffix=St --apikey=XXXXXXXXX >/dev/null 2>&1
+ */
 const argv = require('yargs').argv 
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 var request = require('request');
 var recycleLED = new Gpio(17, 'out'); //use GPIO pin 4, and specify that it is output
 var trashLED = new Gpio(18, 'out'); //use GPIO pin 4, and specify that it is output
 var button = new Gpio(4, 'in', 'both');
+const posturl = process.env.POSTURL;
 
 /**
  * Blink LED of your choosing
@@ -46,7 +57,7 @@ var buttonWatch = button.watch(function(err,value){
 	endBlink();
 });
 
-// Check if required fields have been supplied.
+// Check if required fields have been supplied.`
 if( argv.streetnum && argv.streetname ){
   // Set request body data using inputs.
   var postdata = 	{ 
@@ -57,7 +68,7 @@ if( argv.streetnum && argv.streetname ){
   };
   
   // Make request to Google Cloud function that scrapes the San Diego trash collection website.
-  request.post({url:'https://us-central1-iot-home-215123.cloudfunctions.net/trash-schedule', form: postdata },function(err,res,body){
+  request.post({url: posturl, form: postdata },function(err,res,body){
     const schedule    = JSON.parse( body );  // Weekly trash collection schedule.
     
     if( !err && res.statusCode == 200){
