@@ -22,8 +22,7 @@ The code is a node.js script designed to run on a Raspberry pi. The script makes
 - 1 x Micro USB charging cable
 - 1 x 2A 5v USB charging block
 - 2 x [10mm Super Bright LED's](https://www.adafruit.com/product/4204)(Green & Red)
-- 1 x [16mm Panel mount momentary push button](https://www.adafruit.com/product/
-1504)
+- 1 x [16mm Panel mount momentary push button](https://www.adafruit.com/product/1504)
 - Stranded Project wire
 - Hot Glue
 - Wax Paper
