@@ -3,6 +3,8 @@ A simple sign that indicates whether the trash and/or recycling is being collect
 The lights will stop blinking when the button on the side is pressed. If an error is encountered while retrieving the trash
 schedule the blinking lights will alternate rapidly.
 
+![Demo Trash Sign](img/trash-sign.gif)
+
 The code is a node.js script designed to run on a Raspberry pi. The script makes an API call to a [Google Cloud Function](https://github.com/sfgarza/sd-trash-schedule-function) in order to retrieve the garbage collection schedule.
 
 #### Usage:
@@ -24,10 +26,15 @@ The code is a node.js script designed to run on a Raspberry pi. The script makes
 1504)
 - Stranded Project wire
 - Hot Glue
+- Wax Paper
+- Blue Tape
+- Electrical Tape
+- Heatshrink
 
 ## Tools
 - Mouse, keyboard, monitor, HDMI to hdmi mini cable 
 - 3D Printer
 - Soldering Iron
+
 
 
