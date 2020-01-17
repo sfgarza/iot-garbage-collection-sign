@@ -1,11 +1,10 @@
 # IoT Garbage Collection Sign
 A simple sign that indicates whether the trash and/or recycling is being collected tomorrow by blinking a light for each. 
 The lights will stop blinking when the button on the side is pressed. If an error is encountered while retrieving the trash
-schedule the blinking lights will alternate rapidly.
+schedule the blinking lights will alternate rapidly. The code is a node.js script designed to run on a Raspberry pi. The script makes an API call to a [Google Cloud Function](https://github.com/sfgarza/sd-trash-schedule-function) in order to retrieve the garbage collection schedule.
+
 
 ![Demo Trash Sign](img/trash-sign.gif)
-
-The code is a node.js script designed to run on a Raspberry pi. The script makes an API call to a [Google Cloud Function](https://github.com/sfgarza/sd-trash-schedule-function) in order to retrieve the garbage collection schedule.
 
 #### Usage:
  POSTURL=https://yourcloudfunctionurl.net/trash-schedule node index.js --streetnum=123 --streetname=Main --streetsuffix=St --apikey=XXXXXXXXX
@@ -30,7 +29,7 @@ The code is a node.js script designed to run on a Raspberry pi. The script makes
 - Electrical Tape
 - Heatshrink
 
-## Tools
+## Tools:
 - Mouse, keyboard, monitor, HDMI to hdmi mini cable 
 - 3D Printer
 - Soldering Iron
