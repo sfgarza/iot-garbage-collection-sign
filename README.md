@@ -10,7 +10,7 @@ schedule the blinking lights will alternate rapidly. The code is a node.js scrip
  POSTURL=https://yourcloudfunctionurl.net/trash-schedule node index.js --streetnum=123 --streetname=Main --streetsuffix=St --apikey=XXXXXXXXX
   
 #### Suggested Crontab:
- 00 17 * * * /usr/local/bin/node POSTURL=https://yourcloudfunctionurl.net/trash-schedule /home/pi/iot-garbage-schedule/index.js  --streetnum=123 --streetname=Main --streetsuffix=St --apikey=XXXXXXXXX >/dev/null 2>&1
+ 00 17 * * * /usr/local/bin/node POSTURL=https://yourcloudfunctionurl.net/trash-schedule /home/pi/iot-garbage-collection-sign/index.js  --streetnum=123 --streetname=Main --streetsuffix=St --apikey=XXXXXXXXX >/dev/null 2>&1
 
  __NOTE__: POSTURL should be the URL of the cloud function in https://github.com/sfgarza/sd-trash-schedule-function
  
