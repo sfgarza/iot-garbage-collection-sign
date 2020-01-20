@@ -34,5 +34,14 @@ schedule the blinking lights will alternate rapidly. The code is a node.js scrip
 - 3D Printer
 - Soldering Iron
 
+## 3D Printer Files:
+- [Sign Project Box](https://www.tinkercad.com/things/2P28z394Pcr)
+- [Box Lid](https://www.tinkercad.com/things/gxkRPX0Og6R)
+
+-----
+### TODO:
+- Add mounting rPi mounting studs to box design in CAD file.
+- Improve lid design and integrate screw holes.
+- write step by step tutorial on how to build the box.
 
 
